@@ -3,12 +3,12 @@
     <head>
         <title>Barres</title>
         <script charset="UTF-8" type="text/javascript" src="../lib/raphael-min.js"></script>
-        <script charset="UTF-8" type="text/javascript" src="../lib/componentDesigner-min.js"></script>
-<!--         <script charset="UTF-8" type="text/javascript" src="../lib/componentDesigner.js"></script> -->
+<!--         <script charset="UTF-8" type="text/javascript" src="../lib/componentDesigner-min.js"></script> -->
+        <script charset="UTF-8" type="text/javascript" src="../lib/componentDesigner.js"></script>
         <style type="text/css">
             #my_canvas_container_id {
-                width: 350px;
-                height: 150px;
+                width: 1500px;
+                height: 1000px;
                 border: 1px solid #aaa;
             }
         </style>
@@ -20,12 +20,49 @@
         		// Creation du builder
         		var designer = esiee_components.get_designer();        	
         		
-        		// Defintion des propri�t�s de la barre des virements
+        		// Propriétés du composant à dessiner
         		designer.canvas_container_id = "my_canvas_container_id";
-        		designer.nom = "Manga N° 1";
+        		designer.nom = "MangaEsieeParis";
+        		
+        		designer.ellipses = [
+                {
+                    "id": "446dcdf6-2679-49b1-909d-37cc0489340d",
+                    "centre": {
+                      "id": "d6d905d7-039b-4672-bc10-0406f36e5f52",
+                      "x": 1300,
+                      "y": 300
+                    },
+                    "l": 15,
+                    "h": 20,
+                    "couleur": {
+                      "id": "49fdd929-2737-4cc2-9a7f-f9308a4d9f12",
+                      "r": 0,
+                      "g": 0,
+                      "b": 0,
+                      "a": 0.8
+                    }
+                  },
+                  {
+                    "id": "83619b11-43ea-4cf3-aee2-cdacce0a419d",
+                    "centre": {
+                      "id": "f966a75c-b0cf-4215-b56f-1dd246e99cd2",
+                      "x": 1200,
+                      "y": 300
+                    },
+                    "l": 15,
+                    "h": 20,
+                    "couleur": {
+                      "id": "49fdd929-2737-4cc2-9a7f-f9308a4d9f12",
+                      "r": 0,
+                      "g": 0,
+                      "b": 0,
+                      "a": 0.8
+                    }
+                  }
+                ]
         		
         		// Creation du graphique apres chargement de la page
-        		designer.drawComponent();
+        		designer.drawComponents();
         		
         	</script>
         </div>

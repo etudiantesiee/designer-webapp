@@ -1,14 +1,16 @@
 #!/usr/bin/env node
 var setup = {
         input: {
-            componentDesigner: "../scripts/componentDesigner.js",
+            ellipseComponent: "../scripts/component/ellipse.js",
+            componentDesigner: "../scripts/componentDesigner.js"
         },
         output: {
             "../lib/componentDesigner-min.js": function () {
-                return minify(this.componentDesigner);
+                return minify(this.componentDesigner + this.ellipseComponent);
             },
             "../lib/componentDesigner.js": function () {
-                return this.componentDesigner
+                return this.componentDesigner + "\n" +
+                           this.ellipseComponent
             }
         }
     },
