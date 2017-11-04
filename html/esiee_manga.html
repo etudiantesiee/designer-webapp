@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html >
+    <head>
+        <title>Barres</title>
+        <script charset="UTF-8" type="text/javascript" src="../lib/raphael-min.js"></script>
+<!--         <script charset="UTF-8" type="text/javascript" src="../lib/axbGraphiques-plafond-min.js"></script> -->
+        <script charset="UTF-8" type="text/javascript" src="../lib/axbGraphiques-plafond.js"></script>
+        <style type="text/css">
+            #my_canvas_container_id {
+                width: 350px;
+                height: 150px;
+                border: 1px solid #aaa;
+            }
+        </style>
+    </head>
+    <body >
+        <div id="my_canvas_container_id">
+        	<script type="text/javascript">
+        	
+        		// Création du builder
+        		var barre_builder = fr_axabanqe_graphiques.barres.factory.get_barres_builder();        	
+        		
+        		// Defintion des propriétés de la barre des virements
+        		barre_builder.canvas_container_id = "my_canvas_container_id";
+        		barre_builder.virement_maximum_autorise = 7500;
+        		barre_builder.virement_effectue = 7400;
+        		barre_builder.symbole_devise = "€";
+        		barre_builder.nom_utilisateur = "M. EBANKING TEST";
+        		
+        		barre_builder.text_montant_maximum_virement_atteint = "Vous avez atteint le montant maximum de virement quotidiennement autorisé pour ce compte.";
+        		
+        		var montant_vir_aut_tmp = barre_builder.virement_maximum_autorise - barre_builder.virement_effectue;
+        		barre_builder.montant_virement_autorise = montant_vir_aut_tmp <= 0 ? 0 : montant_vir_aut_tmp;
+        		
+        		// Création du graphique après chargement de la page
+        		barre_builder.drawBarre();
+        		
+        	</script>
+        </div>
+    </body>
+</html>
+        
