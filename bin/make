@@ -1,39 +1,14 @@
 #!/usr/bin/env node
 var setup = {
         input: {
-            axbGraphiques: "../scripts/axbGraphiques.js",
-            logging: "../scripts/axbGraphiques.logging.js",
-            utils: "../scripts/axbGraphiques.utils.js",
-            
-            jauges: "../scripts/jauges/axbGraphiques.jauges.js",
-            jauge_verticale_components: "../scripts/jauges/axbGraphiques.jauges.jaugeVerticaleComponents.js",
-            jauge_horizontale_components: "../scripts/jauges/axbGraphiques.jauges.jaugeHorizontaleComponents.js",
-            jauges_factory: "../scripts/jauges/axbGraphiques.jauges.factory.js",
-            
-            barres: "../scripts/barres/axbGraphiques.barres.js",
-            barres_components: "../scripts/barres/axbGraphiques.barres.components.js",
-            barres_factory: "../scripts/barres/axbGraphiques.barres.factory.js",
-            
-            camemberts: "../scripts/camemberts/axbGraphiques.camemberts.js",
-            camemberts_components: "../scripts/camemberts/axbGraphiques.camemberts.components.js",
-            camemberts_factory: "../scripts/camemberts/axbGraphiques.camemberts.factory.js"
+            componentDesigner: "../scripts/componentDesigner.js",
         },
         output: {
-            "../lib/axbGraphiques-plafond-min.js": function () {
-                return this.axbGraphiques + "\n" + 
-                	   minify(this.logging + 
-                	   			this.utils + 
-                	   			this.jauges + this.jauge_verticale_components + this.jauge_horizontale_components + this.jauges_factory + 
-                	   			this.barres + this.barres_components + this.barres_factory +
-                	   			this.camemberts + this.camemberts_components + this.camemberts_factory);
+            "../lib/componentDesigner-min.js": function () {
+                return minify(this.componentDesigner);
             },
-            "../lib/axbGraphiques-plafond.js": function () {
-                return this.axbGraphiques + "\n" + 
-                		this.logging + "\n\n" + 
-                		this.utils + "\n\n" + 
-                		this.jauges + "\n\n" + this.jauge_verticale_components + this.jauge_horizontale_components + "\n\n" + this.jauges_factory + "\n\n" + 
-                		this.barres + "\n\n" + this.barres_components + "\n\n" + this.barres_factory + "\n\n" +
-                		this.camemberts + "\n\n" + this.camemberts_components + "\n\n" + this.camemberts_factory
+            "../lib/componentDesigner.js": function () {
+                return this.componentDesigner
             }
         }
     },
