@@ -4,7 +4,7 @@
         <title>Barres</title>
         <script charset="UTF-8" type="text/javascript" src="../lib/raphael-min.js"></script>
 <!--         <script charset="UTF-8" type="text/javascript" src="../lib/axbGraphiques-plafond-min.js"></script> -->
-        <script charset="UTF-8" type="text/javascript" src="../lib/axbGraphiques-plafond.js"></script>
+        <script charset="UTF-8" type="text/javascript" src="../lib/componentDesigner.js"></script>
         <style type="text/css">
             #my_canvas_container_id {
                 width: 350px;
@@ -17,23 +17,15 @@
         <div id="my_canvas_container_id">
         	<script type="text/javascript">
         	
-        		// Création du builder
-        		var barre_builder = fr_axabanqe_graphiques.barres.factory.get_barres_builder();        	
+        		// Creation du builder
+        		var designer = esiee_components.get_designer();        	
         		
-        		// Defintion des propriétés de la barre des virements
-        		barre_builder.canvas_container_id = "my_canvas_container_id";
-        		barre_builder.virement_maximum_autorise = 7500;
-        		barre_builder.virement_effectue = 7400;
-        		barre_builder.symbole_devise = "€";
-        		barre_builder.nom_utilisateur = "M. EBANKING TEST";
+        		// Defintion des propriï¿½tï¿½s de la barre des virements
+        		designer.canvas_container_id = "my_canvas_container_id";
+        		designer.nom = "Manga NÂ° 1";
         		
-        		barre_builder.text_montant_maximum_virement_atteint = "Vous avez atteint le montant maximum de virement quotidiennement autorisé pour ce compte.";
-        		
-        		var montant_vir_aut_tmp = barre_builder.virement_maximum_autorise - barre_builder.virement_effectue;
-        		barre_builder.montant_virement_autorise = montant_vir_aut_tmp <= 0 ? 0 : montant_vir_aut_tmp;
-        		
-        		// Création du graphique après chargement de la page
-        		barre_builder.drawBarre();
+        		// Creation du graphique apres chargement de la page
+        		designer.drawComponent();
         		
         	</script>
         </div>
