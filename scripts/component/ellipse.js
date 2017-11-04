@@ -42,7 +42,7 @@ var component_ellipse = {
 								"hauteur : " + this.hauteur + " " +
 								"couleur : " + this.couleur)
 						
-						console.error("Donnée invalide. Aucune ellipse a dessiner pour le composant ellipse " + this.nom)
+						console.error("Donnée(s) invalide(s). Aucune ellipse a dessiner pour le composant ellipse " + this.nom)
 						return;
 					}
 					 

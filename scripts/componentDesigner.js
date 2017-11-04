@@ -50,36 +50,62 @@ var esiee_components = {
 				/**
 				 * Dessin des ellipses
 				 */
-				var nbEllipse = this.ellipses.length
-
-				console.info("Le comosant " + this.nom + " contient " + nbEllipse + " ellipses (ou cercles)")
-				for (i = 0; i < nbEllipse; i++) {
-					var currentEllipse = this.ellipses[i]
-					var currentEllipseName = this.nom + "_ellipse_" + i
-					
-					console.log("Dessin de l'ellipse " + currentEllipseName + " avec l'ID " + currentEllipse.id)
-					var ellipse = component_ellipse.get_ellipse();
-
-					// Propriétés de l'ellipse courante à dessiner
-					ellipse.canvas_container_id = this.canvas_container_id;
-					ellipse.nom = currentEllipseName ;
-					ellipse.centre = currentEllipse.centre;
-					ellipse.largeur = currentEllipse.l;
-					ellipse.hauteur = currentEllipse.h;
-					ellipse.couleur = currentEllipse.couleur;
-
-					// Dessin de l'ellipse en cours
-					var ellipse_object = paper.drawComponent(ellipse)
+				if((typeof this.ellipses) !== 'undefined') {
+					var nbEllipse = this.ellipses.length
+	
+					console.info("Le composant " + this.nom + " contient " + nbEllipse + " ellipses (ou cercles)")
+					for (var i = 0; i < nbEllipse; i++) {
+						var currentEllipse = this.ellipses[i]
+						var currentEllipseName = this.nom + "_ellipse_" + i
+						
+						console.log("Dessin de l'ellipse " + currentEllipseName + " avec l'ID " + currentEllipse.id)
+						var ellipse = component_ellipse.get_ellipse();
+	
+						// Propriétés de l'ellipse courante à dessiner
+						ellipse.canvas_container_id = this.canvas_container_id;
+						ellipse.nom = currentEllipseName ;
+						ellipse.centre = currentEllipse.centre;
+						ellipse.largeur = currentEllipse.l;
+						ellipse.hauteur = currentEllipse.h;
+						ellipse.couleur = currentEllipse.couleur;
+	
+						// Dessin de l'ellipse en cours
+						var ellipse_object = paper.drawComponent(ellipse)
+					}
+	
+					console.log("Dessin des ellipses terminé pour le composant " + this.nom);
 				}
-
-				console.log("Dessin des ellipses terminé pour le composant " + this.nom);
 
 				/**
 				 * Dessin des formes avec des points
 				 * 
 				 */
-				var formeAvecPoint = paper.path("M10 10L90 90");
-				console.log("Dessin des forme avec point terminé pour le composant " + this.nom);
+				if((typeof this.formesAvecPoints) !== 'undefined') {
+					var nbFormeAvecPoints = this.formesAvecPoints.length
+	
+					console.info("Le composant " + this.nom + " contient " + nbFormeAvecPoints + " forme(s) définit à partir de points")
+					for (var i = 0; i < nbFormeAvecPoints; i++) {
+						console.log("Iteration : " + i + " nbFormeAvecPoints = " + nbFormeAvecPoints);
+						var currentFormeAvecPoint = this.formesAvecPoints[i]
+						var currentFormeAvecPointsName = this.nom + "_forme_avec_points_" + i
+						
+						console.log("Dessin de la forme " + currentFormeAvecPointsName + " avec l'ID " + currentFormeAvecPoint.id)
+						var formeAvecPoint = component_path_shape.get_path_shape();
+	
+						// Propriétés de l'formeAvecPoint courante à dessiner
+						formeAvecPoint.canvas_container_id = this.canvas_container_id;
+						formeAvecPoint.nom = currentFormeAvecPointsName;
+						formeAvecPoint.points = currentFormeAvecPoint.points ;
+						formeAvecPoint.couleurTraitsLaison = currentFormeAvecPoint.couleurTraitsLaison;
+						formeAvecPoint.traitDeLaisonFin = currentFormeAvecPoint.traitDeLaisonFin;
+						formeAvecPoint.relierLesPointsExtremes = currentFormeAvecPoint.relierLesPointsExtremes;
+						formeAvecPoint.couleur = currentFormeAvecPoint.couleur;
+	
+						// Dessin de l'formeAvecPoint en cours
+						var formeAvecPointObject = paper.drawComponent(formeAvecPoint)
+					}
+					console.log("Dessin des formes avec points terminé pour le composant " + this.nom);
+				}
 
 			};
 		}

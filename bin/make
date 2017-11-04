@@ -2,15 +2,17 @@
 var setup = {
         input: {
             ellipseComponent: "../scripts/component/ellipse.js",
-            componentDesigner: "../scripts/componentDesigner.js"
+            cheminDePointComponent: "../scripts/component/cheminDePoint.js",
+            componentDesigner: "../scripts/componentDesigner.js",
         },
         output: {
             "../lib/componentDesigner-min.js": function () {
-                return minify(this.componentDesigner + this.ellipseComponent);
+                return minify(this.ellipseComponent + this.cheminDePointComponent + this.componentDesigner);
             },
             "../lib/componentDesigner.js": function () {
-                return this.componentDesigner + "\n" +
-                           this.ellipseComponent
+                return this.ellipseComponent + "\n" +
+                           this.cheminDePointComponent + "\n" +
+                           this.componentDesigner 
             }
         }
     },
