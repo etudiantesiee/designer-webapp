@@ -56,6 +56,14 @@ var component_ellipse = {
 									"couleur : " + this.couleur)
 									
 					var ellipse = paper.ellipse(this.centre.x, this.centre.y, this.largeur/2, this.hauteur/2);
+					
+					var colorHelper = color_utils.get_colorHelper()
+					
+					params = {
+							'fill' : colorHelper.buildRaphaelJsRGBA(this.couleur)
+						 };
+					
+					ellipse.attr(params)
 
 					console.log("Fin du dessin de l'ellipse " + this.nom);
 					

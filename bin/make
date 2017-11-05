@@ -5,6 +5,7 @@ var setup = {
             cheminDePointComponent: "../scripts/component/cheminDePoint.js",
             backEndRestApiHelper: "../scripts/utils/backEndRestApiUtils.js",
             pixelsHelper: "../scripts/utils/pixelsUtils.js",
+            colorHelper: "../scripts/utils/colorUtils.js",
             componentDesigner: "../scripts/componentDesigner.js",
         },
         output: {
@@ -13,6 +14,7 @@ var setup = {
                                     + this.cheminDePointComponent 
                                     + this.backEndRestApiHelper
                                     + this.pixelsHelper
+                                    + this.colorHelper
                                     + this.componentDesigner);
             },
             "../lib/componentDesigner.js": function () {
@@ -20,6 +22,7 @@ var setup = {
                            this.cheminDePointComponent + "\n" +
                            this.backEndRestApiHelper + "\n" +
                            this.pixelsHelper + "\n" +
+                           this.colorHelper + "\n" +
                            this.componentDesigner
             }
         }

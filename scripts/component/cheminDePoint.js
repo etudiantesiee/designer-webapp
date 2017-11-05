@@ -60,9 +60,24 @@ var component_path_shape = {
 					
 					path += (this.relierLesPointsExtremes ? " Z" : "")
 					
-					console.debug("Chemin utilisé pour la construction de la forme : " + path)
+					console.debug("Construction de la forme avec le chemin : " + path)
 					
 					var cheminDePointsObject = paper.path(path);
+					
+					var colorHelper = color_utils.get_colorHelper()
+					
+					var paramsCheminDePointsStyle = {
+							'fill' : colorHelper.buildRaphaelJsRGBA(this.couleur),
+							'stroke-width': (this.traitDeLaisonFin != null 
+													&& this.traitDeLaisonFin !== undefined 
+														&& this.traitDeLaisonFin) ? 1 : 4
+					};
+					
+					if(this.couleurTraitsLaison != null && this.couleurTraitsLaison !== undefined) {
+						paramsCheminDePointsStyle.stroke = colorHelper.buildRaphaelJsRGBA(this.couleurTraitsLaison)
+					}
+					
+					cheminDePointsObject.attr(paramsCheminDePointsStyle)
 
 					console.log("Fin du dessin de la forme faite de points " + this.nom);
 					
