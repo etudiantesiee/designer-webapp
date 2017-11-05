@@ -46,9 +46,11 @@ var backend_rest_api_utils = {
 	        	    xhttp.open("GET", backEndRestApiCallUrl, false);
 	        	    xhttp.setRequestHeader("Content-type", "application/json");
 	        	    xhttp.send();
-	        	    var response = JSON.parse(xhttp.responseText);
+	        	    var responseText = xhttp.responseText
+	        	    console.debug("When calling " + backEndRestApiCallUrl + " Received from back end : " + responseText)
 	        	    
-	        	    console.debug("When calling " + backEndRestApiCallUrl + " Received from back end : " + response)
+	        	    var response = JSON.parse(responseText);
+	        	    
 	        	    
 	        	    return response
 				};

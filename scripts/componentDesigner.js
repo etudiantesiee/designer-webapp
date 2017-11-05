@@ -92,6 +92,10 @@ var esiee_components = {
 						ellipse.largeur = currentEllipse.l;
 						ellipse.hauteur = currentEllipse.h;
 						ellipse.couleur = currentEllipse.couleur;
+						
+						// Ajutement des coordonnées au canvas
+						var pixelsHelper = pixels_utils.pixelsHelper();
+						pixelsHelper.ajustEllipseIntoCanvas(ellipse, paper)
 	
 						// Dessin de l'ellipse en cours
 						var ellipse_object = paper.drawComponent(ellipse)
@@ -123,6 +127,10 @@ var esiee_components = {
 						formeAvecPoint.traitDeLaisonFin = currentFormeAvecPoint.traitDeLaisonFin;
 						formeAvecPoint.relierLesPointsExtremes = currentFormeAvecPoint.relierLesPointsExtremes;
 						formeAvecPoint.couleur = currentFormeAvecPoint.couleur;
+						
+						// Ajutement des coordonnées au canvas
+						var pixelsHelper = pixels_utils.pixelsHelper();
+						pixelsHelper.ajustPointsPathIntoCanvas(formeAvecPoint, paper)
 	
 						// Dessin de l'formeAvecPoint en cours
 						var formeAvecPointObject = paper.drawComponent(formeAvecPoint)

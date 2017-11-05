@@ -45,16 +45,16 @@ var component_path_shape = {
 						console.error("Donnée(s) invalide(s). Aucune forme (faite de points reliés entre eux) a dessiner pour le composant " + this.nom)
 						return;
 					}
-					 
+					
 					 /**
-					  * Dessin des ellipses
+					  * Dessin du chemin
 					  */
 					// Construction du chemin de point
 					var premierPoint = this.points[0];
 					var path = "M " + premierPoint.x + " " + premierPoint.y;
 					var nbPoints = this.points.length;
 					
-					for(i = 1; i < nbPoints; i++) {
+					for(var i = 1; i < nbPoints; i++) {
 						path += " L " + this.points[i].x + " " + this.points[i].y
 					}
 					

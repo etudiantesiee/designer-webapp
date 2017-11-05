@@ -49,7 +49,13 @@ var component_ellipse = {
 					 /**
 					  * Dessin des ellipses
 					  */
-					var ellipse = paper.ellipse(this.centre.x, this.centre.y, this.largeur, this.hauteur);
+					console.debug("dessin de l'ellipse " + this.nom + " avec les valeurs : " + 
+									"centre : " + this.centre + " " + 
+									"largeur : " + this.largeur + " " +
+									"hauteur : " + this.hauteur + " " +
+									"couleur : " + this.couleur)
+									
+					var ellipse = paper.ellipse(this.centre.x, this.centre.y, this.largeur/2, this.hauteur/2);
 
 					console.log("Fin du dessin de l'ellipse " + this.nom);
 					
