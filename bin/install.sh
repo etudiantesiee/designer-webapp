@@ -7,7 +7,7 @@ artefact_name=designer-webapp.tar.gz
 node make
 
 # package
-tar cvfz $artefact_name ../html ../lib ../css
+tar cvfz $artefact_name ../html ../lib ../css ../conf
 
 # Clean and/or create target folder
 rm -rf ../target
