@@ -1,17 +1,17 @@
 #!/usr/bin/env node
 var setup = {
         input: {
-            ellipseComponent: "../library/component/ellipse.js",
-            cheminDePointComponent: "../library/component/cheminDePoint.js",
-            backEndRestApiHelper: "../library/utils/backEndRestApiUtils.js",
-            pixelsHelper: "../library/utils/pixelsUtils.js",
-            colorHelper: "../library/utils/colorUtils.js",
-            componentDesigner: "../library/componentDesigner.js",
+            ellipseComponent: "../core/component/ellipse.js",
+            cheminDePointComponent: "../core/component/cheminDePoint.js",
+            backEndRestApiHelper: "../core/utils/backEndRestApiUtils.js",
+            pixelsHelper: "../core/utils/pixelsUtils.js",
+            colorHelper: "../core/utils/colorUtils.js",
+            componentDesigner: "../core/componentDesigner.js",
             personnageManga: "../scripts/personnageManga.js",
             maisonAvecCercleEtEllipse: "../scripts/maisonAvecCercleEtEllipse.js"
         },
         output: {
-            "../lib/componentDesigner-library-min.js": function () {
+            "../lib/componentDesigner-core-min.js": function () {
                 return minify(this.ellipseComponent 
                                     + this.cheminDePointComponent 
                                     + this.backEndRestApiHelper
@@ -19,7 +19,7 @@ var setup = {
                                     + this.colorHelper
                                     + this.componentDesigner);
             },
-            "../lib/componentDesigner-library.js": function () {
+            "../lib/componentDesigner-core.js": function () {
                 return this.ellipseComponent + "\n" +
                            this.cheminDePointComponent + "\n" +
                            this.backEndRestApiHelper + "\n" +
