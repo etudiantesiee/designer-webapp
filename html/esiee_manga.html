@@ -6,28 +6,49 @@
 <!--         <script charset="UTF-8" type="text/javascript" src="../lib/componentDesigner-min.js"></script> -->
         <script charset="UTF-8" type="text/javascript" src="../lib/componentDesigner.js"></script>
         <style type="text/css">
-            #my_canvas_container_id {
-                width: 4000px;
-                height: 4000px;
+            #my_canvas_container_id_1 {
+                width: 1500px;
+                height: 1500px;
+                border: 1px solid #aaa;
+            }
+            
+            #my_canvas_container_id_2 {
+                width: 1500px;
+                height: 1500px;
                 border: 1px solid #aaa;
             }
         </style>
     </head>
     <body >
-        <div id="my_canvas_container_id">
+        <div id="my_canvas_container_id_1">
         	<script type="text/javascript">
         	
         		// Creation du builder
         		var designer = esiee_components.get_designer();        	
         		
         		// Propriétés du composant à dessiner
-        		designer.canvas_container_id = "my_canvas_container_id";
-        		designer.nom = "maisonAvecCercleEtEllipse";
+        		designer.canvas_container_id = "my_canvas_container_id_1";
+        		designer.nom = "MangaEsiee";
         	    
         		// Creation du graphique apres chargement de la page
         		designer.drawComponents();
         		
         	</script>
+        </div>
+        <div id="my_canvas_container_id_2">
+            <script type="text/javascript">
+            
+                // Creation du builder
+                var designer = esiee_components.get_designer();         
+                
+                // Propriétés du composant à dessiner
+                designer.canvas_container_id = "my_canvas_container_id_2";
+                designer.nom = "maisonAvecCercleEtEllipse";
+                
+                // Creation du graphique apres chargement de la page
+                designer.drawComponents();
+                
+            </script>
         </div>
     </body>
 </html>

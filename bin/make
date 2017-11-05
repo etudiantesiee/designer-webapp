@@ -3,16 +3,21 @@ var setup = {
         input: {
             ellipseComponent: "../scripts/component/ellipse.js",
             cheminDePointComponent: "../scripts/component/cheminDePoint.js",
+            backEndRestApiHelper: "../scripts/utils/backEndRestApiUtils.js",
             componentDesigner: "../scripts/componentDesigner.js",
         },
         output: {
             "../lib/componentDesigner-min.js": function () {
-                return minify(this.ellipseComponent + this.cheminDePointComponent + this.componentDesigner);
+                return minify(this.ellipseComponent 
+                                    + this.cheminDePointComponent 
+                                    + this.componentDesigner
+                                    + this.backEndRestApiHelper);
             },
             "../lib/componentDesigner.js": function () {
                 return this.ellipseComponent + "\n" +
                            this.cheminDePointComponent + "\n" +
-                           this.componentDesigner 
+                           this.componentDesigner + "\n" +
+                           this.backEndRestApiHelper
             }
         }
     },
