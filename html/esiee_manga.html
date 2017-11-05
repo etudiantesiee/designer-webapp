@@ -22,18 +22,7 @@
         		
         		// Propriétés du composant à dessiner
         		designer.canvas_container_id = "my_canvas_container_id";
-        		
-        		var xhttp = new XMLHttpRequest();
-        	    xhttp.open("GET", 'http://localhost:8045/api/items', false);
-        	    xhttp.setRequestHeader("Content-type", "application/json");
-        	    xhttp.send();
-        	    var response = JSON.parse(xhttp.responseText);
-        	    
-        	    console.log("Receive from web service : " + response)
-        		
-        		designer.nom = response[0].nom;
-        	    designer.ellipses = response[0].ellipses;
-        	    designer.formesAvecPoints = response[0].formesAvecPoints;
+        		designer.nom = "maisonAvecCercleEtEllipse";
         	    
         		// Creation du graphique apres chargement de la page
         		designer.drawComponents();

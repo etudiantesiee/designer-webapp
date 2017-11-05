@@ -31,12 +31,36 @@ var esiee_components = {
 				return true;
 
 			};
+			
+			/**
+			 * Fait un appel au backend pour récupérer les données associées à ce composant
+			 */
+			this.initData = function() {
+				var backendHelper = backend_rest_api_utils.get_backend_helper();
+				var data = backendHelper.getGraphicalComponentByName(this.nom);
+				
+				var dataSize = data.length
+				
+				if(dataSize != 1) {
+					console.error("1 seul composant attendu avec le nom : " + this.nom + " mais " + dataSize + " ont été réçus");
+					return false
+				}
+				
+				this.ellipses = data[0].ellipses
+				this.formesAvecPoints = data[0].formesAvecPoints
+				
+				return true
+			};
 
 			this.drawComponents = function() {
 
 				if (!this.checkData()) {
-					console
-							.error("Erreur lors de la validation des données. L'affichage du composant est intérrompu.");
+					console.error("Erreur lors de la validation des données. L'affichage du composant est intérrompu.");
+					return;
+				}
+				
+				if (!this.initData()) {
+					console.error("Erreur lors de la récupération des données. L'affichage du composant est intérrompu.");
 					return;
 				}
 
