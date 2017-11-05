@@ -16,3 +16,4 @@ rebel.xml
 .settings
 **/testResults/**
 .~lock*
+README.md~
