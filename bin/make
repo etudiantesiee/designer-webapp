@@ -1,15 +1,17 @@
 #!/usr/bin/env node
 var setup = {
         input: {
-            ellipseComponent: "../scripts/component/ellipse.js",
-            cheminDePointComponent: "../scripts/component/cheminDePoint.js",
-            backEndRestApiHelper: "../scripts/utils/backEndRestApiUtils.js",
-            pixelsHelper: "../scripts/utils/pixelsUtils.js",
-            colorHelper: "../scripts/utils/colorUtils.js",
-            componentDesigner: "../scripts/componentDesigner.js",
+            ellipseComponent: "../library/component/ellipse.js",
+            cheminDePointComponent: "../library/component/cheminDePoint.js",
+            backEndRestApiHelper: "../library/utils/backEndRestApiUtils.js",
+            pixelsHelper: "../library/utils/pixelsUtils.js",
+            colorHelper: "../library/utils/colorUtils.js",
+            componentDesigner: "../library/componentDesigner.js",
+            personnageManga: "../scripts/personnageManga.js",
+            maisonAvecCercleEtEllipse: "../scripts/maisonAvecCercleEtEllipse.js"
         },
         output: {
-            "../lib/componentDesigner-min.js": function () {
+            "../lib/componentDesigner-library-min.js": function () {
                 return minify(this.ellipseComponent 
                                     + this.cheminDePointComponent 
                                     + this.backEndRestApiHelper
@@ -17,13 +19,22 @@ var setup = {
                                     + this.colorHelper
                                     + this.componentDesigner);
             },
-            "../lib/componentDesigner.js": function () {
+            "../lib/componentDesigner-library.js": function () {
                 return this.ellipseComponent + "\n" +
                            this.cheminDePointComponent + "\n" +
                            this.backEndRestApiHelper + "\n" +
                            this.pixelsHelper + "\n" +
                            this.colorHelper + "\n" +
                            this.componentDesigner
+            },
+            "../lib/componentDesigner-scripts-min.js": function () {
+                return minify(this.personnageManga + "\n" 
+                        + this.maisonAvecCercleEtEllipse);
+            },
+            "../lib/componentDesigner-scripts.js": function () {
+                return this.personnageManga + "\n" 
+                        + this.maisonAvecCercleEtEllipse
+                
             }
         }
     },
