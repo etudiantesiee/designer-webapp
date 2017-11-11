@@ -80,7 +80,7 @@ var esiee_components = {
 					console.info("Le composant " + this.nom + " contient " + nbEllipse + " ellipses (ou cercles)")
 					for (var i = 0; i < nbEllipse; i++) {
 						var currentEllipse = this.ellipses[i]
-						var currentEllipseName = this.nom + "_ellipse_" + i
+						var currentEllipseName = (currentEllipse.nom != null && currentEllipse.nom !== undefined) ? currentEllipse.nom : this.nom + "_ellipse_" + i
 						
 						console.log("Dessin de l'ellipse " + currentEllipseName + " avec l'ID " + currentEllipse.id)
 						var ellipse = component_ellipse.get_ellipse();
@@ -114,7 +114,7 @@ var esiee_components = {
 					console.info("Le composant " + this.nom + " contient " + nbFormeAvecPoints + " forme(s) définit à partir de points")
 					for (var i = 0; i < nbFormeAvecPoints; i++) {
 						var currentFormeAvecPoint = this.formesAvecPoints[i]
-						var currentFormeAvecPointsName = this.nom + "_forme_avec_points_" + i
+						var currentFormeAvecPointsName = (currentFormeAvecPoint.nom != null && currentFormeAvecPoint.nom !== undefined) ? currentFormeAvecPoint.nom : this.nom + "_forme_avec_points_" + i
 						
 						console.log("Dessin de la forme " + currentFormeAvecPointsName + " avec l'ID " + currentFormeAvecPoint.id)
 						var formeAvecPoint = component_path_shape.get_path_shape();
