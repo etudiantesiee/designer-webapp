@@ -1,13 +1,13 @@
 #my_canvas_container_id_1 {
-    width: 1000px;
-    height: 1000px;
     float:left;
+    width: 50%;
+    height: 800px;
     border: 1px solid #aaa;
 }
 
 #my_canvas_container_id_2 {
-    width: 700px;
-    height: 500px;
+    width: 49%;
+    height: 800px;
     float:left;
     border: 1px solid #aaa;
 }
