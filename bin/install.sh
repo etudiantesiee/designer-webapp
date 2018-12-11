@@ -6,6 +6,13 @@ artefact_name=designer-webapp.tar.gz
 # Build with node
 node make
 
+make_result=$?
+if [ $make_result != 0 ]
+then
+	echo "Erreur lors du build de la webapp"
+	return $make_result
+fi
+
 # package
 tar cvfz $artefact_name ../html ../lib ../css ../conf
 
