@@ -38,7 +38,7 @@ var setup = {
             }
         }
     },
-    ujs = require("../../../tp3-3/UglifyJS/uglify-js.js"),
+    ujs = require("./uglifyJS/uglify-js.js"),
     jsp = ujs.parser,
     pro = ujs.uglify,
     fs = require("fs"),
