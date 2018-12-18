@@ -8,7 +8,8 @@ var setup = {
             colorHelper: "../core/utils/colorUtils.js",
             componentDesigner: "../core/componentDesigner.js",
             personnageManga: "../scripts/personnageManga.js",
-            maisonAvecCercleEtEllipse: "../scripts/maisonAvecCercleEtEllipse.js"
+            maisonAvecCercleEtEllipse: "../scripts/maisonAvecCercleEtEllipse.js",
+            grp0: "../scripts/grp0.js"
         },
         output: {
             "../lib/componentDesigner-core-min.js": function () {
@@ -17,7 +18,8 @@ var setup = {
                                     + this.backEndRestApiHelper
                                     + this.pixelsHelper
                                     + this.colorHelper
-                                    + this.componentDesigner);
+                                    + this.componentDesigner
+                                    + this.grp0);
             },
             "../lib/componentDesigner-core.js": function () {
                 return this.ellipseComponent + "\n" +
@@ -25,7 +27,8 @@ var setup = {
                            this.backEndRestApiHelper + "\n" +
                            this.pixelsHelper + "\n" +
                            this.colorHelper + "\n" +
-                           this.componentDesigner
+                           this.componentDesigner + "\n" +
+                           this.grp0
             },
             "../lib/componentDesigner-scripts-min.js": function () {
                 return minify(this.personnageManga + "\n" 

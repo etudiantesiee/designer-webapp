@@ -12,6 +12,13 @@
     border: 1px solid #aaa;
 }
 
+#grp0 {
+    width: 49%;
+    height: 800px;
+    float:left;
+    border: 1px solid #aaa;
+}
+
 .welcome_msg {
   margin-top: 50vh; /* poussé de la moitié de hauteur de viewport */
   transform: translateY(-50%); /* tiré de la moitié de sa propre hauteur */
