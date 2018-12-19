@@ -9,8 +9,8 @@ var setup = {
             componentDesigner: "../core/componentDesigner.js",
             personnageManga: "../scripts/personnageManga.js",
             maisonAvecCercleEtEllipse: "../scripts/maisonAvecCercleEtEllipse.js",
-            grp2: "../scripts/grp2.js"
-            grp6: "../scripts/grp6.js"
+            grp2: "../scripts/grp2.js",
+            grp6: "../scripts/grp6.js",
             grp0: "../scripts/grp5.js"
         },
         output: {
