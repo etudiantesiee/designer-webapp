@@ -21,7 +21,6 @@ var setup = {
                                     + this.pixelsHelper
                                     + this.colorHelper
                                     + this.componentDesigner
-
                                     + this.grp6
                                     + this.grp5);
 
