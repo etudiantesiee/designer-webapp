@@ -9,7 +9,7 @@ var setup = {
             componentDesigner: "../core/componentDesigner.js",
             personnageManga: "../scripts/personnageManga.js",
             maisonAvecCercleEtEllipse: "../scripts/maisonAvecCercleEtEllipse.js",
-            grp0: "../scripts/grp0.js"
+            grp6: "../scripts/grp6.js"
         },
         output: {
             "../lib/componentDesigner-core-min.js": function () {
@@ -19,7 +19,7 @@ var setup = {
                                     + this.pixelsHelper
                                     + this.colorHelper
                                     + this.componentDesigner
-                                    + this.grp0);
+                                    + this.grp6);
             },
             "../lib/componentDesigner-core.js": function () {
                 return this.ellipseComponent + "\n" +
@@ -28,7 +28,7 @@ var setup = {
                            this.pixelsHelper + "\n" +
                            this.colorHelper + "\n" +
                            this.componentDesigner + "\n" +
-                           this.grp0
+                           this.grp6
             },
             "../lib/componentDesigner-scripts-min.js": function () {
                 return minify(this.personnageManga + "\n" 
